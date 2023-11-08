@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Guessthenumber {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int my_number = (int) (Math.random() * 100);
@@ -11,7 +11,10 @@ public class Guessthenumber {
             System.out.println("Guess the number:");
             user_number = sc.nextInt();
 
-            if (user_number == my_number) {
+            if (user_number == 0) {
+                System.out.println("My number is: " + my_number);
+                break;
+            } else if (user_number == my_number) {
                 System.out.println("Correct");
                 break;
             } else if (user_number > my_number) {
@@ -20,9 +23,6 @@ public class Guessthenumber {
                 System.out.println("My number is greater");
             }
         } while (user_number >= 0);
-
-        System.out.print("My number is: ");
-        System.out.print(my_number);
 
         sc.close();
     }
